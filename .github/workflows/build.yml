@@ -1,11 +1,15 @@
-name: Docker Build Test
+name: Taleb CI/CD Pipeline
 on: [push]
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
-      - name: Build Docker Image
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Build Docker image
         run: |
           docker build -t taleb-app .
           docker run taleb-app
