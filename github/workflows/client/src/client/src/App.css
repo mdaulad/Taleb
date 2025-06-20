@@ -1,0 +1,7 @@
+.app {
+  display: flex;
+  height: 100vh;
+}
+.editor {
+  width: 50%;
+}
