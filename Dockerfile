@@ -1,3 +1,10 @@
-# সবচেয়ে সহজ Dockerfile (টেস্টিং এর জন্য)
-FROM alpine:latest
-CMD echo "Taleb App is Working!"
+# সিম্পল Node.js অ্যাপের উদাহরণ
+FROM node:18-alpine
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+EXPOSE 3000
+CMD ["npm", "start"]
